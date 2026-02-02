@@ -540,7 +540,7 @@
 
                     if (parts.length >= 2) {
                         const queryParam = parts[0].trim().replace(/['"]/g, '');
-                        const redirectLink = parts.slice(1).join(',').trim().replace(/['"]/g, '');
+                        const redirectLink = (parts[1] || "").replace(/^['"]|['"]$/g, "").trim();
 
                         console.log(`Parsed: queryParam="${queryParam}", redirectLink="${redirectLink}"`);
 
